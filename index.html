@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rebrickable API</title>
+</head>
+<body>
+
+    <h1>The Rebrickable API</h1>
+
+    <div id="colours"></div>
+
+    <script type='text/javascript' src='config.js'></script>
+    
+    <script>
+
+    const apiKey = config.API_KEY;
+    const url = "https://rebrickable.com/api/v3/lego/colors/";
+
+    function reqListener () {
+        let data = JSON.parse(this.responseText);
+        console.log(data);
+    }
+
+    let xhr = new XMLHttpRequest();
+    
+    // xhr.responseType = 'json';
+    xhr.addEventListener("load", reqListener);
+    xhr.open("GET", url);
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.setRequestHeader('Authorization', 'key ' + apiKey);
+    xhr.send();
+
+    </script>
+    
+</body>
+</html>
