@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Rebrickable API</title>
+
+    <style>
+
+    #colours div {
+        padding: 5px;
+    }
+
+    </style>
 </head>
 <body>
 
@@ -17,16 +25,28 @@
     <script>
 
     const apiKey = config.API_KEY;
-    const url = "https://rebrickable.com/api/v3/lego/colors/";
+    const url = "https://rebrickable.com/api/v3/lego/colors/?page_size=216";
 
     function reqListener () {
+
         let data = JSON.parse(this.responseText);
-        console.log(data);
+        let colours = document.getElementById('colours');
+        
+        data.results.forEach(function(colour){
+
+            let div = document.createElement('div');
+            div.style.backgroundColor = '#' + colour.rgb;
+            div.innerHTML = '#' + colour.rgb + '<br>' + colour.name;
+
+            colours.appendChild(div);
+
+        });
+
+
     }
 
     let xhr = new XMLHttpRequest();
     
-    // xhr.responseType = 'json';
     xhr.addEventListener("load", reqListener);
     xhr.open("GET", url);
     xhr.setRequestHeader('Accept', 'application/json');
