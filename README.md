@@ -1,8 +1,10 @@
-# Using JavaScript with the Rebrickable LEGO API
+# JavaScript with the Rebrickable LEGO API
 
 A basic example of using JavaScript and the Rebrickable API.
 
-## Tutorial Requirements:
+***
+
+## Repo Resources
 
 * [Visual Studio Code](https://code.visualstudio.com/) 
 * [Rebrickable API](https://rebrickable.com/api/v3/docs/)
