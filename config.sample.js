@@ -1,3 +1,3 @@
 const config = {
-    API_KEY : 'REBRICKABLE_API_KEY'
+    API_KEY : '<REBRICKABLE_API_KEY>'
 }
