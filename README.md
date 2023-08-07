@@ -1,4 +1,4 @@
-# JavaScript with the Rebrickable LEGO API
+# JavaScript with the Rebrickable LEGO® API
 
 A basic example of using JavaScript and the Rebrickable API.
 
